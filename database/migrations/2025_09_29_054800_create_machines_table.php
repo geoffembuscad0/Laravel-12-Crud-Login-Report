@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('address')->nullable();
             $table->string('location_prefix')->nullable();
-            $table->tinyInteger('under_maintenance')->default(0)->after('location_prefix')->nullable();
+            $table->tinyInteger('under_maintenance')->default(0)->nullable();
             $table->boolean('active')->default(true);
             $table->softDeletes('deleted_at', precision: 0)->nullable();
             $table->timestamps();

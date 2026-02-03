@@ -27,14 +27,18 @@ class Machine extends Model
 {
     use SoftDeletes;
 
-    protected $perPage = 20;
+    protected $fillable = [
+        'code',
+        'title',
+        'description',
+        'address',
+        'location_prefix',
+        'under_maintenance',
+        'active',
+    ];
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $fillable = ['code', 'title', 'description', 'address', 'location_prefix', 'under_maintenance', 'active'];
-
-
+    protected $casts = [
+        'under_maintenance' => 'boolean',
+        'active' => 'boolean',
+    ];
 }
