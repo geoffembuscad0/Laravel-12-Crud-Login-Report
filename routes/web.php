@@ -8,8 +8,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
 
-Route::view('dashboard', 'dashboard')->middleware(['auth'])->name('dashboard');
-Route::view('profile', 'profile')->middleware(['auth'])->name('profile');
+Route::view('dashboard', 'dashboard')
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
+
+Route::view('profile', 'profile')
+    ->middleware(['auth'])
+    ->name('profile');
 
 Route::middleware(['auth'])->prefix('machines')->name('machines.')->group(function () {
     Route::get('/',  MachineIndex::class)->name('index');
@@ -17,6 +22,4 @@ Route::middleware(['auth'])->prefix('machines')->name('machines.')->group(functi
     Route::get('/{machine}', ShowMachine::class)->name('show');
     Route::get('/{machine}/edit', EditMachine::class)->name('edit');
 });
-
-
 require __DIR__.'/auth.php';
