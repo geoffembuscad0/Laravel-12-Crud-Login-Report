@@ -19,19 +19,19 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/machines',
         MachineIndex::class
-    )->middleware('permission:machine.view');
+    )->middleware('permission:machine.view')->name('machines.index');
 
     Route::get('/machines/create',
         MachineForm::class
-    )->middleware('permission:machine.create');
+    )->middleware('permission:machine.create')->name('machines.create');
 
     Route::get('/machines/{machine}/edit',
         MachineForm::class
-    )->middleware('permission:machine.edit');
+    )->middleware('permission:machine.edit')->name('machines.edit');
 
     Route::get('/machines/{machine}',
         MachineShow::class
-    )->middleware('permission:machine.view');
+    )->middleware('permission:machine.view')->name('machines.show');
 
 });
 
