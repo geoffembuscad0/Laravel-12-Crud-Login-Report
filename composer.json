@@ -1,15 +1,15 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "geoffembuscad0/laravel-12-crud-login-report",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "A learning project built with Laravel 12, featuring machine management (create, edit, view, soft-delete) and role-based access control using Spatie Permissions. This repository served as a hands-on exercise to explore the latest Laravel 12 features and strengthen my full-stack development skills beyond my usual experience with Laravel 11.",
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
         "php": "^8.2",
         "laravel/framework": "^12.0",
-        "laravel/tinker": "^2.10.1",
-        "livewire/livewire": "^3.6.4",
+        "laravel/tinker": "^2.10",
+        "livewire/livewire": "^3.6",
         "livewire/volt": "^1.7.0",
         "spatie/laravel-permission": "^6.24"
     },
@@ -21,7 +21,7 @@
         "laravel/sail": "^1.41",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.6",
-        "phpunit/phpunit": "^11.5.3"
+        "phpunit/phpunit": "^11.5"
     },
     "autoload": {
         "psr-4": {
@@ -46,7 +46,7 @@
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",
-            "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1 --timeout=0\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite --kill-others"
+            "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1 --timeout=0\" \"php artisan pail --timeout=0\" \"npm run dev\" --names \"backend,queue,pail,frontend\" --raw"
         ],
         "test": [
             "@php artisan config:clear --ansi",
