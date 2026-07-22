@@ -11,6 +11,7 @@ class MachineForm extends Component
     public $serial_number;
     public $location;
     public $is_active = true;
+    public $description;
 
     public function mount(?Machine $machine = null)
     {
@@ -27,6 +28,7 @@ class MachineForm extends Component
             'serial_number' => 'required|unique:machines,serial_number,' . optional($this->machine)->id,
             'location' => 'nullable',
             'is_active' => 'boolean',
+            'description' => 'nullable'
         ];
     }
 
